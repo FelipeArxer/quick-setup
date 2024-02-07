@@ -1,37 +1,70 @@
 @echo off
 title Quick Setup
+cls
+:: 0 = Black        8 = Gray
+:: 1 = Blue         9 = Light Blue
+:: 2 = Green        A = Light Green
+:: 3 = Aqua         B = Light Aqua
+:: 4 = Red          C = Light Red
+:: 5 = Purple       D = Light Purple
+:: 6 = Yellow       E = Light Yellow
+:: 7 = White        F = Bright White
+:: Fisrt is [Background] Second is [Foreground]
 color 03
 
-set firefox="%programfiles%\Firefox Developer Edition\firefox.exe"
+set chrome="%programfiles%\Google\Chrome\Application\chrome.exe"
+set start-chrome=false
+
+set firefox="%programfiles%\Mozilla Firefox\firefox.exe"
+set start-firefox=true
+
+set msedge="%programfiles(x86)%\Microsoft\Edge\Application\msedge.exe"
+set start-msedge=false
+
+set notepadplusplus="%programfiles%\Notepad++\notepad++.exe"
+set start-notepadplusplus=true
+
 set vscode="%programfiles%\Microsoft VS Code\Code.exe"
-set eclipse="%systemdrive%\eclipse\eclipse.exe"
-set sqldev="%systemdrive%\sqldeveloper\sqldeveloper.exe"
-set postman="%localappdata%\Postman\Postman.exe"
-set soupui="%ProgramFiles(x86)%\SmartBear\SoapUI-5.5.0\bin\SoapUI-5.5.0.exe"
+set start-vscode=true
 
-echo Begin...
+set githubdesktop="%localappdata%\GitHubDesktop\GitHubDesktop.exe"
+set start-githubdesktop=true
+
+echo Starting processes...
 echo.
 
-start "" %firefox%
-echo Starting: %firefox%
+if %start-chrome% equ true (
+	start /min "" %chrome%
+	echo Starting: %chrome%
+)
 
-start "" %vscode%
-echo Starting: %vscode%
+if %start-firefox% equ true (
+	start /min "" %firefox% 
+	echo Starting: %firefox%
+)
 
-start "" %eclipse%
-echo Starting: %eclipse%
+if %start-msedge% equ true (
+	start /min "" %msedge%
+	echo Starting: %msedge%
+)
 
-start "" %sqldev%
-echo Starting: %sqldev%
+if %start-notepadplusplus% equ true (
+	start /min "" %notepadplusplus%
+	echo Starting: %notepadplusplus%
+)
 
-start "" %postman%
-echo Starting: %postman%
+if %start-vscode% equ true (
+	start /min "" %vscode%
+	echo Starting: %vscode%
+)
 
-start "" %soupui%
-echo Starting: %soupui%
+if %start-githubdesktop% equ true (
+	start /min "" %githubdesktop%
+	echo Starting: %githubdesktop%
+)
 
 echo.
-echo End.
+echo End of processes.
 echo.
 
 pause
