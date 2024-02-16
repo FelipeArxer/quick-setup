@@ -1,6 +1,7 @@
 @echo off
 title Quick Setup
 cls
+:: Color config
 :: 0 = Black        8 = Gray
 :: 1 = Blue         9 = Light Blue
 :: 2 = Green        A = Light Green
@@ -12,23 +13,23 @@ cls
 :: Fisrt is [Background] Second is [Foreground]
 color 03
 
-set chrome="%programfiles%\Google\Chrome\Application\chrome.exe"
 set start-chrome=false
+set chrome="%programfiles%\Google\Chrome\Application\chrome.exe"
 
-set firefox="%programfiles%\Mozilla Firefox\firefox.exe"
 set start-firefox=true
+set firefox="%programfiles%\Mozilla Firefox\firefox.exe"
 
-set msedge="%programfiles(x86)%\Microsoft\Edge\Application\msedge.exe"
 set start-msedge=false
+set msedge="%programfiles(x86)%\Microsoft\Edge\Application\msedge.exe"
 
-set notepadplusplus="%programfiles%\Notepad++\notepad++.exe"
 set start-notepadplusplus=true
+set notepadplusplus="%programfiles%\Notepad++\notepad++.exe"
 
-set vscode="%programfiles%\Microsoft VS Code\Code.exe"
 set start-vscode=true
+set vscode="%programfiles%\Microsoft VS Code\Code.exe"
 
-set githubdesktop="%localappdata%\GitHubDesktop\GitHubDesktop.exe"
 set start-githubdesktop=true
+set githubdesktop="%localappdata%\GitHubDesktop\GitHubDesktop.exe"
 
 echo Starting processes...
 echo.
@@ -39,7 +40,7 @@ if %start-chrome% equ true (
 )
 
 if %start-firefox% equ true (
-	start /min "" %firefox% 
+	start /min "" %firefox%
 	echo Starting: %firefox%
 )
 
